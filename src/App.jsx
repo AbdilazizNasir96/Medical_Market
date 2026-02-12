@@ -4,6 +4,8 @@ import HomePage from './pages/public/HomePage';
 import ProductDetailPage from './pages/public/ProductDetailPage';
 import ContactPage from './pages/public/ContactPage';
 import CartPage from './pages/public/CartPage';
+import AboutPage from './pages/public/AboutPage';
+import HelpPage from './pages/public/HelpPage';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import ProtectedRoute from './components/admin/ProtectedRoute';
@@ -28,6 +30,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/help" element={<HelpPage />} />
           
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />

@@ -73,6 +73,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/about"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                >
+                  <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
+                  <span>About Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/"
                   onClick={(e) => {
                     e.preventDefault();
@@ -93,17 +102,6 @@ const Footer = () => {
                   <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
                   <span>Contact Us</span>
                 </Link>
-              </li>
-              <li>
-                <a
-                  href="https://t.me/health_market_et"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
-                >
-                  <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
-                  <span>Help & Support</span>
-                </a>
               </li>
             </ul>
           </div>
@@ -175,17 +173,15 @@ const Footer = () => {
               </div>
               
               {/* Help Button */}
-              <a
-                href="https://t.me/health_market_et"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/help"
                 className="mt-4 flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-4 py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                 </svg>
                 <span>Need Help?</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -239,14 +235,12 @@ const Footer = () => {
               <Link to="/admin/login" className="text-gray-400 hover:text-pink-400 transition-colors">
                 Admin Portal
               </Link>
-              <a 
-                href="https://t.me/health_market_et" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-pink-400 transition-colors"
-              >
+              <Link to="/about" className="text-gray-400 hover:text-pink-400 transition-colors">
+                About Us
+              </Link>
+              <Link to="/help" className="text-gray-400 hover:text-pink-400 transition-colors">
                 Help Center
-              </a>
+              </Link>
               <Link to="/contact" className="text-gray-400 hover:text-pink-400 transition-colors">
                 Support
               </Link>
