@@ -199,7 +199,7 @@ const HelpPage = () => {
 
             {/* Telegram */}
             <a
-              href="https://t.me/health_market_et"
+              href="https://t.me/reyan701"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800/50 backdrop-blur-xl rounded-xl p-4 sm:p-6 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-105 group"
@@ -209,7 +209,7 @@ const HelpPage = () => {
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Telegram</h3>
               <p className="text-gray-400 text-sm sm:text-base mb-2">Quick responses</p>
-              <p className="text-blue-400 font-semibold text-sm sm:text-base">@health_market_et</p>
+              <p className="text-blue-400 font-semibold text-sm sm:text-base">@reyan701</p>
             </a>
 
             {/* Email */}
