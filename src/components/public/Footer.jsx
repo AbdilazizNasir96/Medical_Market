@@ -62,22 +62,49 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {[
-                { to: '/', label: 'Home' },
-                { to: '/about', label: 'About Us' },
-                { to: '/products', label: 'Products' },
-                { to: '/contact', label: 'Contact Us' }
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    to={link.to}
-                    className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
-                  >
-                    <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
-                    <span>{link.label}</span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                >
+                  <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
+                  <span>Home</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    window.location.href = '/';
+                  }}
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                >
+                  <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
+                  <span>Products</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                >
+                  <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
+                  <span>Contact Us</span>
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://t.me/health_market_et"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                >
+                  <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
+                  <span>Help & Support</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -88,32 +115,42 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               {[
-                'Diagnostic Tools',
-                'Laboratory Equipment',
-                'Imaging Systems',
-                'Surgical Instruments'
+                { name: 'Diagnostic Tools', icon: '🩺' },
+                { name: 'Laboratory Equipment', icon: '🔬' },
+                { name: 'Imaging Systems', icon: '📷' },
+                { name: 'Respiratory Care', icon: '🫁' }
               ].map((category, idx) => (
                 <li key={idx}>
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      setTimeout(() => {
+                        window.location.href = '/';
+                      }, 300);
+                    }}
                     className="text-gray-300 hover:text-purple-400 transition-colors flex items-center space-x-2 group"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:w-4 transition-all"></span>
-                    <span>{category}</span>
-                  </a>
+                    <span className="flex items-center gap-2">
+                      <span>{category.icon}</span>
+                      <span>{category.name}</span>
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact & Help */}
           <div>
             <h3 className="text-xl font-black mb-6 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
               Get In Touch
             </h3>
             <div className="space-y-4">
               <a
-                href="tel:+251900763647"
+                href="tel:+251901525863"
                 className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors group"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -122,13 +159,13 @@ const Footer = () => {
                 <span>+251 90 152 5863</span>
               </a>
               <a
-                href="mailto:info@docteramarket.com"
+                href="mailto:rayanmedicalmarket@gmail.com"
                 className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors group"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                   <FiMail className="text-white" size={18} />
                 </div>
-                <span>rayanmedicalmarket@gmail.com</span>
+                <span className="text-sm break-all">rayanmedicalmarket@gmail.com</span>
               </a>
               <div className="flex items-start space-x-3 text-gray-300">
                 <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -136,6 +173,19 @@ const Footer = () => {
                 </div>
                 <span>Addis Ababa, Ethiopia</span>
               </div>
+              
+              {/* Help Button */}
+              <a
+                href="https://t.me/health_market_et"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-4 py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                </svg>
+                <span>Need Help?</span>
+              </a>
             </div>
           </div>
         </div>
@@ -181,22 +231,30 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-center md:text-left">
+            <p className="text-gray-400 text-center md:text-left text-sm">
               &copy; 2026 RayanMedical Market. All rights reserved. Made with{' '}
               <span className="text-pink-500 animate-pulse">❤️</span> in Ethiopia
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs md:text-sm">
               <Link to="/admin/login" className="text-gray-400 hover:text-pink-400 transition-colors">
                 Admin Portal
               </Link>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
-                Privacy Policy
+              <a 
+                href="https://t.me/health_market_et" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-400 transition-colors"
+              >
+                Help Center
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-pink-400 transition-colors">
-                Cookie Policy
+              <Link to="/contact" className="text-gray-400 hover:text-pink-400 transition-colors">
+                Support
+              </Link>
+              <a 
+                href="tel:+251901525863" 
+                className="text-gray-400 hover:text-pink-400 transition-colors"
+              >
+                Call Us
               </a>
             </div>
           </div>
