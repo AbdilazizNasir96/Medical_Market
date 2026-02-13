@@ -149,14 +149,14 @@ const HomePage = () => {
           }}></div>
         </div>
 
-        {/* Rotating Gradient Circles - Reduced on mobile for performance */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-[200px] md:w-[600px] h-[200px] md:h-[600px] bg-gradient-to-r from-pink-500/20 md:from-pink-500/40 to-transparent rounded-full blur-2xl md:blur-3xl" style={{
+        {/* Rotating Gradient Circles - HIDDEN ON MOBILE */}
+        <div className="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute w-[600px] h-[600px] bg-gradient-to-r from-pink-500/40 to-transparent rounded-full blur-3xl" style={{
             animation: 'rotate-slow 20s linear infinite',
             top: '-10%',
             left: '-10%'
           }}></div>
-          <div className="absolute w-[180px] md:w-[500px] h-[180px] md:h-[500px] bg-gradient-to-r from-cyan-500/20 md:from-cyan-500/40 to-transparent rounded-full blur-2xl md:blur-3xl" style={{
+          <div className="absolute w-[500px] h-[500px] bg-gradient-to-r from-cyan-500/40 to-transparent rounded-full blur-3xl" style={{
             animation: 'rotate-reverse 25s linear infinite',
             bottom: '-10%',
             right: '-10%'
