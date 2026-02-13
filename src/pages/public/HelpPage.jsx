@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
+import BackButton from '../../components/public/BackButton';
 import { FiSearch, FiShoppingCart, FiPackage, FiCreditCard, FiTruck, FiHelpCircle, FiPhone, FiMail, FiMessageSquare } from 'react-icons/fi';
 import { FaTelegram } from 'react-icons/fa';
 
@@ -90,6 +91,7 @@ const HelpPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <Navbar />
+      <BackButton />
       
       <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 flex-grow">
         {/* Hero Section */}

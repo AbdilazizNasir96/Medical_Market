@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from '../../utils/supabaseClient';
 import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
+import BackButton from '../../components/public/BackButton';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 const ContactPage = () => {
@@ -52,6 +53,7 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <Navbar />
+      <BackButton />
       
       <div className="container mx-auto px-4 py-6 sm:py-8 md:py-12 flex-grow">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2 sm:mb-3 md:mb-4 text-white">Contact Us</h1>

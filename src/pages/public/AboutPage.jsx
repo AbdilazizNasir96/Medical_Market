@@ -1,11 +1,13 @@
 import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
+import BackButton from '../../components/public/BackButton';
 import { FiHeart, FiShield, FiTruck, FiAward, FiUsers, FiTarget, FiCheckCircle } from 'react-icons/fi';
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <Navbar />
+      <BackButton />
       
       <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 flex-grow">
         {/* Hero Section */}
