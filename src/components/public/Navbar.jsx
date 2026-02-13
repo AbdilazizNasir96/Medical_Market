@@ -93,16 +93,16 @@ const Navbar = ({ categories = [], onCategoryClick }) => {
                 </div>
               </div>
               
-              <div className="hidden sm:block">
+              <div>
                 <div className="flex items-center">
-                  <span className="text-2xl font-black text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
-                    Rayan
+                  <span className="text-lg sm:text-2xl font-black text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                    Reyan
                   </span>
-                  <span className="text-2xl font-black ml-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-gradient bg-300%">
+                  <span className="text-lg sm:text-2xl font-black ml-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent animate-gradient bg-300%">
                     Medical
                   </span>
                 </div>
-                <div className="text-xs text-purple-300 font-semibold tracking-wider">PREMIUM MARKET</div>
+                <div className="text-[9px] sm:text-xs text-purple-300 font-semibold tracking-wider">PREMIUM MARKET</div>
               </div>
             </Link>
 
