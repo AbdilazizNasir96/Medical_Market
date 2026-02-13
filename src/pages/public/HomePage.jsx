@@ -284,7 +284,8 @@ const HomePage = () => {
             {/* Right Side - Premium Image Carousel - MOBILE OPTIMIZED - Takes 40% on mobile */}
             <div className="col-span-1 flex justify-end items-center">
               <div className="relative w-full max-w-[120px] h-[120px] sm:max-w-[180px] sm:h-[180px] md:max-w-[280px] md:h-[280px] lg:max-w-md lg:h-[350px] mb-6 sm:mb-8 md:mb-0">
-                {/* Vibrant Glow Ring - COMPLETELY REMOVED */}
+                {/* Vibrant Glow Ring */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl opacity-30 sm:opacity-50 animate-pulse"></div>
                 
                 {images.map((img, index) => {
                   const direction = index % 4;
@@ -311,10 +312,11 @@ const HomePage = () => {
                       }}
                     >
                       <div className="relative w-full h-full group">
-                        {/* Vibrant Border with Rainbow Gradient - COMPLETELY REMOVED */}
+                        {/* Vibrant Border with Rainbow Gradient */}
+                        <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl opacity-50 sm:opacity-75 group-hover:opacity-100 blur-sm sm:blur-lg transition-all animate-gradient bg-300%"></div>
                         
-                        {/* Image Container - NO SHADOW */}
-                        <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden">
+                        {/* Image Container */}
+                        <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl shadow-purple-500/30 sm:shadow-purple-500/50">
                           <img 
                             src={img}
                             alt={`Medical Equipment ${index + 1}`}
