@@ -284,8 +284,8 @@ const HomePage = () => {
             {/* Right Side - Premium Image Carousel - MOBILE OPTIMIZED - Takes 40% on mobile */}
             <div className="col-span-1 flex justify-end items-center">
               <div className="relative w-full max-w-[120px] h-[120px] sm:max-w-[180px] sm:h-[180px] md:max-w-[280px] md:h-[280px] lg:max-w-md lg:h-[350px] mb-6 sm:mb-8 md:mb-0">
-                {/* Vibrant Glow Ring - Reduced on mobile */}
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl opacity-30 sm:opacity-50 animate-pulse"></div>
+                {/* Vibrant Glow Ring - HIDDEN ON MOBILE */}
+                <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur-3xl opacity-50 animate-pulse"></div>
                 
                 {images.map((img, index) => {
                   const direction = index % 4;
