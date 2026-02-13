@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const ProductCard = ({ product }) => {
   // Get primary image or first image
   const primaryImage = product.product_images?.find(img => img.is_primary)?.image_url 
