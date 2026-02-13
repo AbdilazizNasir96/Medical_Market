@@ -284,8 +284,7 @@ const HomePage = () => {
             {/* Right Side - Premium Image Carousel - MOBILE OPTIMIZED - Takes 40% on mobile */}
             <div className="col-span-1 flex justify-end items-center">
               <div className="relative w-full max-w-[120px] h-[120px] sm:max-w-[180px] sm:h-[180px] md:max-w-[280px] md:h-[280px] lg:max-w-md lg:h-[350px] mb-6 sm:mb-8 md:mb-0">
-                {/* Vibrant Glow Ring - HIDDEN ON MOBILE */}
-                <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur-3xl opacity-50 animate-pulse"></div>
+                {/* Vibrant Glow Ring - COMPLETELY REMOVED */}
                 
                 {images.map((img, index) => {
                   const direction = index % 4;
@@ -312,11 +311,10 @@ const HomePage = () => {
                       }}
                     >
                       <div className="relative w-full h-full group">
-                        {/* Vibrant Border with Rainbow Gradient - HIDDEN ON MOBILE */}
-                        <div className="hidden md:block absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl opacity-75 group-hover:opacity-100 blur-lg transition-all animate-gradient bg-300%"></div>
+                        {/* Vibrant Border with Rainbow Gradient - COMPLETELY REMOVED */}
                         
-                        {/* Image Container */}
-                        <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl shadow-purple-500/30 sm:shadow-purple-500/50">
+                        {/* Image Container - NO SHADOW */}
+                        <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden">
                           <img 
                             src={img}
                             alt={`Medical Equipment ${index + 1}`}
@@ -348,20 +346,7 @@ const HomePage = () => {
                   );
                 })}
 
-                {/* Vibrant Image Counter - MUCH SMALLER ON MOBILE */}
-                <div className="absolute -bottom-4 sm:-bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2 z-20">
-                  {images.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentImage(idx)}
-                      className={`h-1 sm:h-2 rounded-full transition-all ${
-                        idx === currentImage 
-                          ? 'bg-gradient-to-r from-pink-500 to-purple-500 w-3 sm:w-8 shadow-sm sm:shadow-lg shadow-pink-500/50' 
-                          : 'bg-white/30 w-1 sm:w-2 hover:bg-white/60'
-                      }`}
-                    />
-                  ))}
-                </div>
+                {/* Vibrant Image Counter - COMPLETELY REMOVED */}
               </div>
             </div>
           </div>
