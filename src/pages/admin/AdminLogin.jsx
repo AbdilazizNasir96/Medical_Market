@@ -89,7 +89,7 @@ const AdminLogin = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all"
-                  placeholder="Well to admin dashboard.com"
+                  placeholder="Reyan Medical Market"
                 />
               </div>
             </div>
