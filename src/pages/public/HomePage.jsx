@@ -312,8 +312,8 @@ const HomePage = () => {
                       }}
                     >
                       <div className="relative w-full h-full group">
-                        {/* Vibrant Border with Rainbow Gradient - Reduced on mobile */}
-                        <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl opacity-50 sm:opacity-75 group-hover:opacity-100 blur-sm sm:blur-lg transition-all animate-gradient bg-300%"></div>
+                        {/* Vibrant Border with Rainbow Gradient - HIDDEN ON MOBILE */}
+                        <div className="hidden md:block absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl opacity-75 group-hover:opacity-100 blur-lg transition-all animate-gradient bg-300%"></div>
                         
                         {/* Image Container */}
                         <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl shadow-purple-500/30 sm:shadow-purple-500/50">
