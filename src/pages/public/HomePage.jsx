@@ -149,14 +149,14 @@ const HomePage = () => {
           }}></div>
         </div>
 
-        {/* Rotating Gradient Circles - Smaller on mobile */}
+        {/* Rotating Gradient Circles - Reduced on mobile for performance */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gradient-to-r from-pink-500/40 to-transparent rounded-full blur-3xl" style={{
+          <div className="absolute w-[200px] md:w-[600px] h-[200px] md:h-[600px] bg-gradient-to-r from-pink-500/20 md:from-pink-500/40 to-transparent rounded-full blur-2xl md:blur-3xl" style={{
             animation: 'rotate-slow 20s linear infinite',
             top: '-10%',
             left: '-10%'
           }}></div>
-          <div className="absolute w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-gradient-to-r from-cyan-500/40 to-transparent rounded-full blur-3xl" style={{
+          <div className="absolute w-[180px] md:w-[500px] h-[180px] md:h-[500px] bg-gradient-to-r from-cyan-500/20 md:from-cyan-500/40 to-transparent rounded-full blur-2xl md:blur-3xl" style={{
             animation: 'rotate-reverse 25s linear infinite',
             bottom: '-10%',
             right: '-10%'
@@ -283,9 +283,9 @@ const HomePage = () => {
 
             {/* Right Side - Premium Image Carousel - MOBILE OPTIMIZED - Takes 40% on mobile */}
             <div className="col-span-1 flex justify-end items-center">
-              <div className="relative w-full max-w-[140px] h-[140px] sm:max-w-[200px] sm:h-[200px] md:max-w-[280px] md:h-[280px] lg:max-w-md lg:h-[350px]">
-                {/* Vibrant Glow Ring */}
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur-3xl opacity-50 animate-pulse"></div>
+              <div className="relative w-full max-w-[120px] h-[120px] sm:max-w-[180px] sm:h-[180px] md:max-w-[280px] md:h-[280px] lg:max-w-md lg:h-[350px] mb-6 sm:mb-8 md:mb-0">
+                {/* Vibrant Glow Ring - Reduced on mobile */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl opacity-30 sm:opacity-50 animate-pulse"></div>
                 
                 {images.map((img, index) => {
                   const direction = index % 4;
@@ -312,11 +312,11 @@ const HomePage = () => {
                       }}
                     >
                       <div className="relative w-full h-full group">
-                        {/* Vibrant Border with Rainbow Gradient */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl opacity-75 group-hover:opacity-100 blur-lg transition-all animate-gradient bg-300%"></div>
+                        {/* Vibrant Border with Rainbow Gradient - Reduced on mobile */}
+                        <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl sm:rounded-3xl opacity-50 sm:opacity-75 group-hover:opacity-100 blur-sm sm:blur-lg transition-all animate-gradient bg-300%"></div>
                         
                         {/* Image Container */}
-                        <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/50">
+                        <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-2xl shadow-purple-500/30 sm:shadow-purple-500/50">
                           <img 
                             src={img}
                             alt={`Medical Equipment ${index + 1}`}
@@ -326,38 +326,38 @@ const HomePage = () => {
                             }}
                           />
                           
-                          {/* Dark Overlay with Gradient */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                          {/* Dark Overlay with Gradient - Hidden on mobile */}
+                          <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-purple-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         </div>
                         
-                        {/* Vibrant Floating Particles - Hidden on mobile */}
+                        {/* Vibrant Floating Particles - Hidden on mobile for performance */}
                         {isActive && (
                           <>
-                            <div className="hidden md:block absolute top-8 right-8 w-4 h-4 bg-pink-500 rounded-full animate-ping shadow-lg shadow-pink-500/50"></div>
-                            <div className="hidden md:block absolute bottom-12 left-12 w-3 h-3 bg-cyan-400 rounded-full animate-ping animation-delay-500 shadow-lg shadow-cyan-400/50"></div>
-                            <div className="hidden md:block absolute top-1/2 left-8 w-2 h-2 bg-purple-500 rounded-full animate-ping animation-delay-1000 shadow-lg shadow-purple-500/50"></div>
-                            <div className="absolute bottom-1/3 right-12 w-3 h-3 bg-blue-400 rounded-full animate-ping animation-delay-300 shadow-lg shadow-blue-400/50"></div>
+                            <div className="hidden lg:block absolute top-8 right-8 w-4 h-4 bg-pink-500 rounded-full animate-ping shadow-lg shadow-pink-500/50"></div>
+                            <div className="hidden lg:block absolute bottom-12 left-12 w-3 h-3 bg-cyan-400 rounded-full animate-ping animation-delay-500 shadow-lg shadow-cyan-400/50"></div>
+                            <div className="hidden lg:block absolute top-1/2 left-8 w-2 h-2 bg-purple-500 rounded-full animate-ping animation-delay-1000 shadow-lg shadow-purple-500/50"></div>
+                            <div className="hidden lg:block absolute bottom-1/3 right-12 w-3 h-3 bg-blue-400 rounded-full animate-ping animation-delay-300 shadow-lg shadow-blue-400/50"></div>
                           </>
                         )}
 
-                        {/* Vibrant Corner Accents */}
-                        <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-pink-500 rounded-tl-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-pink-500/50"></div>
-                        <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-cyan-500 rounded-br-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-cyan-500/50"></div>
+                        {/* Vibrant Corner Accents - Hidden on mobile */}
+                        <div className="hidden sm:block absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-pink-500 rounded-tl-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-pink-500/50"></div>
+                        <div className="hidden sm:block absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-cyan-500 rounded-br-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-cyan-500/50"></div>
                       </div>
                     </div>
                   );
                 })}
 
-                {/* Vibrant Image Counter */}
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                {/* Vibrant Image Counter - MUCH SMALLER ON MOBILE */}
+                <div className="absolute -bottom-4 sm:-bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2 z-20">
                   {images.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentImage(idx)}
-                      className={`h-2 rounded-full transition-all ${
+                      className={`h-1 sm:h-2 rounded-full transition-all ${
                         idx === currentImage 
-                          ? 'bg-gradient-to-r from-pink-500 to-purple-500 w-8 shadow-lg shadow-pink-500/50' 
-                          : 'bg-white/30 w-2 hover:bg-white/60'
+                          ? 'bg-gradient-to-r from-pink-500 to-purple-500 w-3 sm:w-8 shadow-sm sm:shadow-lg shadow-pink-500/50' 
+                          : 'bg-white/30 w-1 sm:w-2 hover:bg-white/60'
                       }`}
                     />
                   ))}
@@ -515,6 +515,39 @@ const HomePage = () => {
         .animation-delay-2000 {
           animation-delay: 2s;
         }
+
+        /* Reduce animations on mobile for better performance */
+        @media (max-width: 768px) {
+          .animate-pulse {
+            animation: none;
+          }
+          .animate-gradient {
+            animation: none;
+          }
+          .animate-heartbeat {
+            animation: none;
+          }
+          .animate-ping {
+            animation: none;
+          }
+          /* Disable float animation on mobile */
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+          }
+          /* Disable rotation animations on mobile */
+          @keyframes rotate-slow {
+            0%, 100% {
+              transform: rotate(0deg);
+            }
+          }
+          @keyframes rotate-reverse {
+            0%, 100% {
+              transform: rotate(0deg);
+            }
+          }
+        }
       `}</style>
 
       {/* Mobile-only CTA Buttons and Stats - Below Hero */}
@@ -546,7 +579,7 @@ const HomePage = () => {
             { value: '50K+', label: 'Customers', color: 'from-purple-500 to-indigo-500' },
             { value: '99.9%', label: 'Satisfaction', color: 'from-cyan-500 to-blue-500' }
           ].map((stat, idx) => (
-            <div key={idx} className={`text-center bg-gradient-to-br ${stat.color} rounded-xl p-3 shadow-xl`}>
+            <div key={idx} className={`text-center bg-gradient-to-br ${stat.color} rounded-xl p-3 shadow-lg`}>
               <div className="text-xl font-black text-white">{stat.value}</div>
               <div className="text-[10px] text-white/90 mt-1 font-semibold">{stat.label}</div>
             </div>
@@ -556,8 +589,8 @@ const HomePage = () => {
 
       {/* Premium Categories Section with Dark Theme - MOBILE OPTIMIZED */}
       <section className="container mx-auto px-4 py-8 md:py-16 lg:py-20 relative">
-        {/* Decorative Background Elements - Hidden on mobile */}
-        <div className="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Decorative Background Elements - Hidden on mobile and tablet */}
+        <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none opacity-50">
           <div className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl top-0 left-1/4"></div>
           <div className="absolute w-96 h-96 bg-pink-500/10 rounded-full blur-3xl bottom-0 right-1/4"></div>
         </div>
@@ -585,7 +618,7 @@ const HomePage = () => {
             categories.slice(0, 8).map((category, idx) => (
               <div
                 key={category.id}
-                className="animate-scale-in"
+                className="md:animate-scale-in"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
                 <CategoryCard 
@@ -693,7 +726,7 @@ const HomePage = () => {
             <svg className="absolute left-4 md:left-5 top-1/2 transform -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <div className="absolute right-4 md:right-5 top-1/2 transform -translate-y-1/2">
+            <div className="hidden md:block absolute right-4 md:right-5 top-1/2 transform -translate-y-1/2">
               <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse shadow-lg shadow-pink-500/50"></div>
             </div>
           </div>
@@ -799,7 +832,7 @@ const HomePage = () => {
             {products.map((product, idx) => (
               <div
                 key={product.id}
-                className="animate-scale-in"
+                className="md:animate-scale-in"
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
                 <ProductCard product={product} />

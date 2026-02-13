@@ -64,8 +64,8 @@ const Navbar = ({ categories = [], onCategoryClick }) => {
         {/* Animated Border */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 animate-gradient bg-300%"></div>
         
-        {/* Floating Particles Effect */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating Particles Effect - DESKTOP ONLY */}
+        <div className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute w-32 h-32 bg-pink-500/10 rounded-full blur-3xl animate-float-slow" style={{ top: '-20%', left: '10%' }}></div>
           <div className="absolute w-32 h-32 bg-purple-500/10 rounded-full blur-3xl animate-float-slow" style={{ top: '-20%', right: '10%', animationDelay: '1s' }}></div>
         </div>
@@ -84,12 +84,12 @@ const Navbar = ({ categories = [], onCategoryClick }) => {
             {/* Logo with CRAZY Animation */}
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="relative">
-                {/* Rotating Glow Ring */}
-                <div className="absolute -inset-2 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl opacity-75 group-hover:opacity-100 blur-lg animate-spin-slow"></div>
+                {/* Rotating Glow Ring - DESKTOP ONLY */}
+                <div className="hidden md:block absolute -inset-2 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl opacity-75 group-hover:opacity-100 blur-lg animate-spin-slow"></div>
                 
                 {/* Logo Icon */}
-                <div className="relative w-14 h-14 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-2xl shadow-purple-500/50">
-                  <FiZap className="w-8 h-8 text-white animate-pulse" />
+                <div className="relative w-14 h-14 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center transform md:group-hover:scale-110 md:group-hover:rotate-12 transition-all duration-500 shadow-2xl shadow-purple-500/50">
+                  <FiZap className="w-8 h-8 text-white md:animate-pulse" />
                 </div>
               </div>
               
@@ -152,17 +152,17 @@ const Navbar = ({ categories = [], onCategoryClick }) => {
                 )}
               </Link>
 
-              {/* Telegram Button with Pulse */}
+              {/* Telegram Button with Pulse - REDUCED ANIMATION ON MOBILE */}
               <a 
                 href="https://t.me/health_market_et" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative bg-gradient-to-r from-[#0088cc] to-[#0077b3] text-white w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110 transition-all shadow-2xl shadow-cyan-500/50 hover:shadow-cyan-500/80 animate-pulse-slow"
+                className="group relative bg-gradient-to-r from-[#0088cc] to-[#0077b3] text-white w-12 h-12 rounded-xl flex items-center justify-center md:hover:scale-110 transition-all shadow-2xl shadow-cyan-500/50 md:hover:shadow-cyan-500/80 md:animate-pulse-slow"
                 title="Join our Telegram channel"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
                 <svg 
-                  className="w-6 h-6 relative z-10 group-hover:scale-125 transition-transform duration-300" 
+                  className="w-6 h-6 relative z-10 md:group-hover:scale-125 transition-transform duration-300" 
                   fill="currentColor" 
                   viewBox="0 0 24 24"
                 >

@@ -35,12 +35,12 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 animate-gradient-shift"></div>
 
-      {/* Animated Particles */}
+      {/* Animated Particles - REDUCED ON MOBILE */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-white rounded-full opacity-20 animate-float-particle"
+            className="hidden md:block absolute w-2 h-2 bg-white rounded-full opacity-20 animate-float-particle"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -51,8 +51,8 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         ))}
       </div>
 
-      {/* Rotating Rings */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      {/* Rotating Rings - DESKTOP ONLY */}
+      <div className="hidden md:flex absolute inset-0 items-center justify-center">
         <div className="relative w-96 h-96">
           <div className="absolute inset-0 border-4 border-pink-500/30 rounded-full animate-spin-slow"></div>
           <div className="absolute inset-8 border-4 border-purple-500/30 rounded-full animate-spin-reverse"></div>
@@ -62,16 +62,16 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center space-y-8 px-4">
-        {/* Logo with Pulse Animation */}
+        {/* Logo with Pulse Animation - REDUCED ON MOBILE */}
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur-3xl opacity-60 animate-pulse-slow"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur-3xl opacity-60 md:animate-pulse-slow"></div>
           <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-3xl shadow-2xl border border-white/10">
             <div className="flex items-center space-x-4">
               <div className="relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/50 animate-bounce-slow">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/50 md:animate-bounce-slow">
                   <FiHeart className="text-white" size={40} />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center animate-ping-slow">
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center md:animate-ping-slow">
                   <FiActivity className="text-white" size={16} />
                 </div>
               </div>
@@ -116,8 +116,8 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           </div>
         </div>
 
-        {/* Floating Icons */}
-        <div className="flex space-x-6 mt-8">
+        {/* Floating Icons - DESKTOP ONLY */}
+        <div className="hidden md:flex space-x-6 mt-8">
           {[
             { icon: FiHeart, color: 'from-pink-500 to-rose-500', delay: '0s' },
             { icon: FiActivity, color: 'from-purple-500 to-indigo-500', delay: '0.2s' },
@@ -147,9 +147,9 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         </div>
       </div>
 
-      {/* Corner Decorations */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+      {/* Corner Decorations - DESKTOP ONLY */}
+      <div className="hidden md:block absolute top-0 left-0 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="hidden md:block absolute bottom-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
     </div>
   );
 };
