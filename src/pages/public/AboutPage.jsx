@@ -1,11 +1,18 @@
 import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
 import BackButton from '../../components/public/BackButton';
+import SEO from '../../components/SEO';
 import { FiHeart, FiShield, FiTruck, FiAward, FiUsers, FiTarget, FiCheckCircle } from 'react-icons/fi';
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <SEO 
+        title="About Us - RayanMedical Market"
+        description="Learn about RayanMedical Market, your trusted partner in medical equipment. We provide premium quality medical equipment to healthcare professionals across Ethiopia."
+        keywords="about RayanMedical, medical equipment Ethiopia, healthcare solutions, medical supplies company"
+        url="https://reyanmedical-market.vercel.app/about"
+      />
       <Navbar />
       <BackButton />
       

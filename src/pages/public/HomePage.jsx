@@ -4,6 +4,7 @@ import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
 import ProductCard from '../../components/public/ProductCard';
 import CategoryCard from '../../components/public/CategoryCard';
+import SEO from '../../components/SEO';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -133,6 +134,12 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <SEO 
+        title="RayanMedical Market - Medical Equipment & Supplies Platform"
+        description="Your trusted source for quality medical equipment and supplies. Browse our extensive catalog of healthcare products, medical devices, and professional medical supplies."
+        keywords="medical equipment, medical supplies, healthcare products, medical devices, hospital equipment, medical instruments, RayanMedical"
+        url="https://reyanmedical-market.vercel.app/"
+      />
       <Navbar categories={categories} onCategoryClick={handleCategoryClick} />
       
       {/* Premium Hero Section with Dark Vibrant Background - MOBILE OPTIMIZED */}

@@ -4,6 +4,7 @@ import { supabase } from '../../utils/supabaseClient';
 import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
 import ImageCarousel from '../../components/public/ImageCarousel';
+import SEO from '../../components/SEO';
 import { FiArrowLeft, FiPhone, FiSend, FiShoppingCart, FiCheck } from 'react-icons/fi';
 import { FaTelegram } from 'react-icons/fa';
 import { useCart } from '../../context/CartContext';
@@ -84,6 +85,14 @@ const ProductDetailPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <SEO 
+        title={product ? `${product.name} - RayanMedical Market` : 'Product Details - RayanMedical Market'}
+        description={product ? product.description : 'View detailed information about medical equipment and supplies at RayanMedical Market'}
+        keywords={product ? `${product.name}, medical equipment, healthcare products, ${product.categories?.name}` : 'medical equipment, healthcare products'}
+        url={`https://reyanmedical-market.vercel.app/product/${id}`}
+        image={product?.product_images?.find(img => img.is_primary)?.image_url || 'https://reyanmedical-market.vercel.app/vite.svg'}
+        type="product"
+      />
       <Navbar categories={[]} />
       
       <div className="container mx-auto px-4 py-4 sm:py-6 md:py-8 flex-grow">

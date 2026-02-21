@@ -3,6 +3,7 @@ import { supabase } from '../../utils/supabaseClient';
 import Navbar from '../../components/public/Navbar';
 import Footer from '../../components/public/Footer';
 import BackButton from '../../components/public/BackButton';
+import SEO from '../../components/SEO';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
 const ContactPage = () => {
@@ -52,6 +53,12 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <SEO 
+        title="Contact Us - RayanMedical Market"
+        description="Get in touch with RayanMedical Market. Contact us for inquiries about medical equipment, supplies, and healthcare products. We're here to help."
+        keywords="contact RayanMedical, medical equipment inquiry, healthcare products contact, medical supplies support"
+        url="https://reyanmedical-market.vercel.app/contact"
+      />
       <Navbar />
       <BackButton />
       

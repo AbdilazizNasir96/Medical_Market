@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import HomePage from './pages/public/HomePage';
 import ProductDetailPage from './pages/public/ProductDetailPage';
 import ContactPage from './pages/public/ContactPage';
@@ -20,7 +21,7 @@ function App() {
   };
 
   return (
-    <>
+    <HelmetProvider>
       {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
       <Router>
         <ScrollToTop />
@@ -45,7 +46,7 @@ function App() {
           />
         </Routes>
       </Router>
-    </>
+    </HelmetProvider>
   );
 }
 
