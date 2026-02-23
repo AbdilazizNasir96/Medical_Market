@@ -227,11 +227,11 @@ const HomePage = () => {
               </p>
               
               {/* Typing Animation - SIMPLE & VISIBLE */}
-              <div className="min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem] flex items-center justify-start relative py-2">
+              <div className="min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem] flex items-center justify-start relative py-2 overflow-hidden">
                 
-                {/* Main Typing Text - BRIGHT & VISIBLE */}
+                {/* Main Typing Text - BRIGHT & VISIBLE - NO LINE BREAKS */}
                 <h2 
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black relative z-10"
+                  className="text-lg sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black relative z-10 whitespace-nowrap"
                   style={{
                     color: '#ec4899',
                     textShadow: '0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(139, 92, 246, 0.6), 0 4px 8px rgba(0, 0, 0, 0.3)'
