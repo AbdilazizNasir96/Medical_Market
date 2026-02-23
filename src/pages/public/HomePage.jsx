@@ -50,17 +50,13 @@ const HomePage = () => {
 
     const timer = setTimeout(() => {
       if (!isDeleting && typedText === currentWord) {
-        // Pause before deleting
         setTimeout(() => setIsDeleting(true), pauseTime);
       } else if (isDeleting && typedText === '') {
-        // Move to next word
         setIsDeleting(false);
         setCurrentEquipment((prev) => (prev + 1) % equipmentList.length);
       } else if (isDeleting) {
-        // Delete character
         setTypedText(currentWord.substring(0, typedText.length - 1));
       } else {
-        // Type character
         setTypedText(currentWord.substring(0, typedText.length + 1));
       }
     }, typingSpeed);
@@ -230,21 +226,27 @@ const HomePage = () => {
                 You get premium
               </p>
               
-              {/* Typing Animation Equipment Text */}
-              <div className="h-8 sm:h-12 md:h-16 lg:h-20 xl:h-24 flex items-center justify-start">
+              {/* Typing Animation - SIMPLE & VISIBLE */}
+              <div className="min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[4rem] lg:min-h-[5rem] flex items-center justify-start relative py-2">
+                
+                {/* Main Typing Text - BRIGHT & VISIBLE */}
                 <h2 
-                  className="text-base sm:text-xl md:text-3xl lg:text-4xl xl:text-6xl font-black"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black relative z-10"
                   style={{
-                    color: 'transparent',
-                    backgroundImage: 'linear-gradient(135deg, #ec4899, #8b5cf6, #06b6d4)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    filter: 'drop-shadow(0 0 20px rgba(236, 72, 153, 0.6))'
+                    color: '#ec4899',
+                    textShadow: '0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(139, 92, 246, 0.6), 0 4px 8px rgba(0, 0, 0, 0.3)'
                   }}
                 >
                   {typedText}
-                  <span className="animate-pulse">|</span>
+                  <span 
+                    className="inline-block ml-1"
+                    style={{
+                      animation: 'cursor-blink 1s step-end infinite',
+                      color: '#8b5cf6'
+                    }}
+                  >
+                    |
+                  </span>
                 </h2>
               </div>
               
@@ -501,6 +503,122 @@ const HomePage = () => {
           opacity: 0;
         }
 
+        @keyframes equipment-rotate {
+          0% {
+            opacity: 0;
+            transform: translateY(50px) scale(0.8) rotateX(90deg);
+          }
+          10% {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg);
+          }
+          90% {
+            opacity: 1;
+            transform: translateY(0) scale(1) rotateX(0deg);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.8) rotateX(-90deg);
+          }
+        }
+
+        @keyframes letter-wave {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            transform: translateY(-10px) scale(1.1);
+          }
+        }
+
+        @keyframes letter-pop {
+          0% {
+            transform: scale(0) translateY(30px);
+            opacity: 0;
+          }
+          70% {
+            transform: scale(1.15) translateY(-5px);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes letter-bounce {
+          0% {
+            transform: translateY(20px) scale(0.8);
+            opacity: 0;
+          }
+          60% {
+            transform: translateY(-10px) scale(1.2);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+          }
+        }
+
+        @keyframes cursor-blink {
+          0%, 50% {
+            opacity: 1;
+          }
+          51%, 100% {
+            opacity: 0;
+          }
+        }
+
+        @keyframes cursor-glow {
+          0%, 100% {
+            filter: drop-shadow(0 0 5px currentColor);
+          }
+          50% {
+            filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 30px currentColor);
+          }
+        }
+
+        @keyframes text-glow {
+          0%, 100% {
+            filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.5));
+          }
+          50% {
+            filter: drop-shadow(0 0 30px rgba(236, 72, 153, 0.8)) drop-shadow(0 0 50px rgba(139, 92, 246, 0.6));
+          }
+        }
+
+        @keyframes float-particle-3d {
+          0%, 100% {
+            transform: translate3d(0, 0, 0) scale(1);
+            opacity: 0.3;
+          }
+          25% {
+            transform: translate3d(10px, -15px, 20px) scale(1.2);
+            opacity: 0.8;
+          }
+          50% {
+            transform: translate3d(-5px, -25px, 10px) scale(0.8);
+            opacity: 0.5;
+          }
+          75% {
+            transform: translate3d(15px, -10px, 30px) scale(1.1);
+            opacity: 0.7;
+          }
+        }
+
+        @keyframes gradient-shift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
         .animation-delay-1000 {
           animation-delay: 1s;
           opacity: 0;
@@ -728,27 +846,31 @@ const HomePage = () => {
 
         {/* Filter Pills - REDESIGNED FOR MOBILE */}
         <div className="space-y-3">
-          {/* Main Filters Row */}
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            {[
-              { id: 'all', label: 'All Products', icon: '🏥', color: 'from-purple-500 to-indigo-500' },
-              { id: 'discount', label: 'Discount', icon: '🔥', color: 'from-red-500 to-pink-500' },
-              { id: 'new', label: 'New', icon: '✨', color: 'from-green-500 to-emerald-500' },
-              { id: 'used', label: 'Used', icon: '♻️', color: 'from-blue-500 to-cyan-500' },
-            ].map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => handleCategoryClick(filter.id)}
-                className={`flex items-center gap-1.5 px-4 md:px-5 py-2.5 md:py-3 rounded-xl font-bold transition-all transform active:scale-95 text-xs md:text-sm ${
-                  selectedCategory === filter.id 
-                    ? `bg-gradient-to-r ${filter.color} text-white shadow-xl scale-105` 
-                    : 'bg-white/5 backdrop-blur-xl border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 hover:scale-105'
-                }`}
-              >
-                <span className="text-base">{filter.icon}</span>
-                <span>{filter.label}</span>
-              </button>
-            ))}
+          {/* Main Filters Row - Scrollable on mobile */}
+          <div className="relative">
+            <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory">
+              {[
+                { id: 'all', label: 'All Products', icon: '🏥', color: 'from-purple-500 to-indigo-500' },
+                { id: 'discount', label: 'Discount', icon: '🔥', color: 'from-red-500 to-pink-500' },
+                { id: 'new', label: 'New', icon: '✨', color: 'from-green-500 to-emerald-500' },
+                { id: 'used', label: 'Used', icon: '♻️', color: 'from-blue-500 to-cyan-500' },
+              ].map((filter) => (
+                <button
+                  key={filter.id}
+                  onClick={() => handleCategoryClick(filter.id)}
+                  className={`flex-shrink-0 snap-start flex items-center gap-1.5 px-4 md:px-5 py-2.5 md:py-3 rounded-xl font-bold transition-all transform active:scale-95 text-xs md:text-sm whitespace-nowrap ${
+                    selectedCategory === filter.id 
+                      ? `bg-gradient-to-r ${filter.color} text-white shadow-xl scale-105` 
+                      : 'bg-white/5 backdrop-blur-xl border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 hover:scale-105'
+                  }`}
+                >
+                  <span className="text-base">{filter.icon}</span>
+                  <span>{filter.label}</span>
+                </button>
+              ))}
+            </div>
+            {/* Scroll indicator */}
+            <div className="absolute right-0 top-0 bottom-2 w-12 bg-gradient-to-l from-slate-900 to-transparent pointer-events-none md:hidden"></div>
           </div>
 
           {/* Categories Row - Scrollable on mobile */}

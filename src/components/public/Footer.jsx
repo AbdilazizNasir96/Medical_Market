@@ -23,8 +23,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* About */}
-          <div className="space-y-4">
+          {/* About - Full width on mobile */}
+          <div className="space-y-4 col-span-1 md:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/50">
                 <FiHeart className="text-white" size={24} />
@@ -56,16 +56,18 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-black mb-6 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+          {/* Quick Links, Categories, and Get In Touch - Horizontal on mobile */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-3 grid grid-cols-3 gap-4 md:gap-8">
+            {/* Quick Links */}
+            <div>
+            <h3 className="text-base md:text-xl font-black mb-3 md:mb-6 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               <li>
                 <Link
                   to="/"
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-1 md:space-x-2 group text-xs md:text-base"
                 >
                   <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
                   <span>Home</span>
@@ -74,7 +76,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-1 md:space-x-2 group text-xs md:text-base"
                 >
                   <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
                   <span>About Us</span>
@@ -88,7 +90,7 @@ const Footer = () => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     window.location.href = '/';
                   }}
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-1 md:space-x-2 group text-xs md:text-base"
                 >
                   <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
                   <span>Products</span>
@@ -97,7 +99,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-2 group"
+                  className="text-gray-300 hover:text-pink-400 transition-colors flex items-center space-x-1 md:space-x-2 group text-xs md:text-base"
                 >
                   <span className="w-0 h-0.5 bg-gradient-to-r from-pink-500 to-purple-500 group-hover:w-4 transition-all"></span>
                   <span>Contact Us</span>
@@ -108,10 +110,10 @@ const Footer = () => {
 
           {/* Categories */}
           <div>
-            <h3 className="text-xl font-black mb-6 bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
+            <h3 className="text-base md:text-xl font-black mb-3 md:mb-6 bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
               Categories
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {[
                 { name: 'Diagnostic Tools', icon: '🩺' },
                 { name: 'Laboratory Equipment', icon: '🔬' },
@@ -128,11 +130,11 @@ const Footer = () => {
                         window.location.href = '/';
                       }, 300);
                     }}
-                    className="text-gray-300 hover:text-purple-400 transition-colors flex items-center space-x-2 group"
+                    className="text-gray-300 hover:text-purple-400 transition-colors flex items-center space-x-1 md:space-x-2 group text-xs md:text-base"
                   >
                     <span className="w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:w-4 transition-all"></span>
-                    <span className="flex items-center gap-2">
-                      <span>{category.icon}</span>
+                    <span className="flex items-center gap-1 md:gap-2">
+                      <span className="hidden md:inline">{category.icon}</span>
                       <span>{category.name}</span>
                     </span>
                   </Link>
@@ -143,39 +145,39 @@ const Footer = () => {
 
           {/* Contact & Help */}
           <div>
-            <h3 className="text-xl font-black mb-6 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+            <h3 className="text-base md:text-xl font-black mb-3 md:mb-6 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
               Get In Touch
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-2 md:space-y-4">
               <a
                 href="tel:+251901525863"
-                className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors group"
+                className="flex items-center space-x-2 md:space-x-3 text-gray-300 hover:text-cyan-400 transition-colors group"
               >
-                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FiPhone className="text-white" size={18} />
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <FiPhone className="text-white" size={14} />
                 </div>
-                <span>+251 90 152 5863</span>
+                <span className="text-xs md:text-base truncate">+251 90 152 5863</span>
               </a>
               <a
                 href="mailto:rayanmedicalmarket@gmail.com"
-                className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors group"
+                className="flex items-center space-x-2 md:space-x-3 text-gray-300 hover:text-cyan-400 transition-colors group"
               >
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <FiMail className="text-white" size={18} />
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
+                  <FiMail className="text-white" size={14} />
                 </div>
-                <span className="text-sm break-all">rayanmedicalmarket@gmail.com</span>
+                <span className="text-xs md:text-sm break-all">rayanmedicalmarket@gmail.com</span>
               </a>
-              <div className="flex items-start space-x-3 text-gray-300">
-                <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <FiMapPin className="text-white" size={18} />
+              <div className="flex items-start space-x-2 md:space-x-3 text-gray-300">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <FiMapPin className="text-white" size={14} />
                 </div>
-                <span>Addis Ababa, Ethiopia</span>
+                <span className="text-xs md:text-base">Addis Ababa, Ethiopia</span>
               </div>
               
               {/* Help Button */}
               <Link
                 to="/help"
-                className="mt-4 flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-4 py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg"
+                className="mt-2 md:mt-4 flex items-center justify-center space-x-1 md:space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg text-xs md:text-base"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
@@ -183,6 +185,7 @@ const Footer = () => {
                 <span>Need Help?</span>
               </Link>
             </div>
+          </div>
           </div>
         </div>
 
