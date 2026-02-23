@@ -156,7 +156,7 @@ const Footer = () => {
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <FiPhone className="text-white" size={14} />
                 </div>
-                <span className="text-xs md:text-base truncate">+251 90 152 5863</span>
+                <span className="text-[10px] md:text-base leading-tight break-words">+251 90 152 5863</span>
               </a>
               <a
                 href="mailto:rayanmedicalmarket@gmail.com"
@@ -165,21 +165,21 @@ const Footer = () => {
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                   <FiMail className="text-white" size={14} />
                 </div>
-                <span className="text-xs md:text-sm break-all">rayanmedicalmarket@gmail.com</span>
+                <span className="text-[10px] md:text-sm leading-tight break-all">rayanmedical market@gmail.com</span>
               </a>
               <div className="flex items-start space-x-2 md:space-x-3 text-gray-300">
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-pink-500 to-rose-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <FiMapPin className="text-white" size={14} />
                 </div>
-                <span className="text-xs md:text-base">Addis Ababa, Ethiopia</span>
+                <span className="text-[10px] md:text-base leading-tight">Addis Ababa, Ethiopia</span>
               </div>
               
               {/* Help Button */}
               <Link
                 to="/help"
-                className="mt-2 md:mt-4 flex items-center justify-center space-x-1 md:space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg text-xs md:text-base"
+                className="mt-2 md:mt-4 flex items-center justify-center space-x-1 md:space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-2 md:px-4 py-2 md:py-3 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg text-[10px] md:text-base"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                 </svg>
                 <span>Need Help?</span>
